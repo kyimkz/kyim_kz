@@ -25,7 +25,7 @@ class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Email'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Password'}))
 
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
 
     # captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
 
@@ -45,4 +45,4 @@ class SetNewPasswordForm(SetPasswordForm):
 class PasswordResetForm(PasswordResetForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={"placeholder":"Email"}))
 
-    captcha = ReCaptchaField()
+    # captcha = ReCaptchaField()
