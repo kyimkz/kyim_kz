@@ -1,0 +1,32 @@
+{% load static %}
+
+<head>
+    <link rel="stylesheet" href="{% static 'assets/css/base.css' %}">
+  </head>
+
+<section style="font-size: 1.5em; position: absolute; margin-top: 45px; width: 100%;">
+    {% if messages %}
+        {% for message in messages %}
+            <div class="centerfivs">
+                {% if message.tags == 'success' %}
+                <div class="alert alert-success" style="background-color: #d4edda; border: 1px solid #c3e6cb; color: #155724; padding: 10px; margin-bottom: 10px;">
+                    {{ message|safe|escape }}
+                </div>
+            {% elif message.tags == 'error' %}
+                <div class="alert alert-danger" style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 10px; margin-bottom: 10px;">
+                    {{ message|safe }}
+                </div>
+            {% elif message.tags == 'warning' %}
+                <div class="alert alert-warning" style="background-color: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; padding: 10px; margin-bottom: 10px;">
+                    {{ message|safe|escape }}
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
+    {% endif %}
+</section>
+<script>
+    setTimeout (() => {
+        $(".alert").alert("close");
+    }, 2000)
+</script>

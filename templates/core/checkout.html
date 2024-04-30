@@ -1,0 +1,91 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html data-theme="light">
+  <title>kyim. - checkout</title>
+  <link rel="stylesheet" href="{% static 'assets/css/checkout.css' %}">
+</head>
+
+<main>
+    {% for o in order_items %}
+    <div class="card-body">
+        <img src="{{o.image}}" class="imgpic">&ensp;
+        <div class="akjcnajskc">
+            <h4>{{o.item}}</h4>
+        <h2>Quantity: {{o.quantity}}</h2>
+        <h2>Size: {{o.size}}</h2>
+        <h2>Price: ${{o.price}}</h2>
+        <h2>Total: ${{o.total}}</h2>
+        </div>
+    </div>
+    {% endfor %}
+
+    <h1>Order Summary</h1>
+    <div>
+        <div>
+            <h2>Delivery: 0.00</h2>
+        </div>
+        <div>
+            <h2>Tax: 0.00</h2>
+        </div>
+        <div>
+            <h2>Total: ${{order.price}}</h2>
+        </div>
+    </div>
+
+    <div class="payment">
+        {{paypal_payment_button.render}}
+    </div>
+</main>
+
+
+ <!--  <main>
+        <body>
+
+        <h1>There are <strong class="text_brand">{{totalItemsInCart}}</strong> item{{products.count|pluralize}} in your cart</h1>
+
+        <div>
+            <h2>Total - <span>{{cart_total}} tg</span></h2>
+        </div>
+        <a href="{% url 'core:cart' %}" class="nav_i">Go Back To Cart</a>
+
+        <div class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product_id, item in cart_data.items %}
+                    <tr>
+                        <td class="image">
+                            <img src="{{ item.image }}" alt="#" class="imgpic">
+                        </td>
+                        <td>
+                            <h3><a href="{% url 'core:product-detail' item.pid %}" class="product-name">{{item.title}}</a></h3>
+                        </td>
+                        <td>
+                            <h3>x {{item.quantity}}</h3>
+                        </td>
+                        <td>
+                            <h3>{{item.price}} tg</h3>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="payment">
+            {{paypal_payment_button.render}}
+        </div>-->
+    </body>
+  </main>
+  
+  </html> 
+{% endblock content %}

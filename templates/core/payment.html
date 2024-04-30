@@ -1,0 +1,64 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html> 
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - payment</title> 
+  <link rel="stylesheet" href="{% static 'assets/css/payment.css' %}"> 
+</head>
+
+<body>
+    <div class="general">
+        <div class="pages">
+            <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:payment' %}" class="size"> payment options</a></div>
+        </div>
+        <div class="img">
+            <img src="{% static 'assets/images/logo/payment.jpg' %}" alt="" class="about">
+        </div>
+        <div class="about">
+            <h1>
+                Payment Options
+            </h1>
+            <div>
+                <p>When placing an order on the site, payment is made through the ePay payment gateways in secure mode using the SSL encryption protocol.
+                    The online store does not receive or save your card details or other payment details. Payments are carried out in strict accordance with the requirements of ePay payment systems.</p>
+                <p><br><br>How to pay for an order with a card online?</p>
+                <div class="images">
+                    <img src="{% static 'assets/images/logo/1.avif' %}" alt="" class="options">
+                    <img src="{% static 'assets/images/logo/2.avif' %}" alt="" class="options">
+                    <img src="{% static 'assets/images/logo/3.webp' %}" alt="" class="options">
+                    <img src="{% static 'assets/images/logo/4.avif' %}" alt="" class="options">
+                </div>
+                <p><br><br>1. After clicking the "Continue" button, you will be redirected to the ePay payment gateway, where you can specify the details of your bank card. If the Bank-Issuer of your plastic card supports the technology of secure online payments Verified By VISA or MasterCard SecureCode, be prepared to provide a special password required for successful payment. You can always check with the bank that issued your card any formation regarding the methods and the ability to obtain a password for making an online payment.</p>
+                <p><br><br>2. On the ePay server page you will be prompted to authorize a bank card and enter the following data: </p>
+                    <p><br>·   cardholder</p>
+                    <p><br>·   card number</p>
+                    <p><br>·   card expiration date</p>
+                    <p><br>·   CVV2 or CVC2 card code (indicated on the back of the credit card)</p>
+                    <p><br>Then you can return to our online store by clicking the button "Return to the store".</p>
+                <p><br><br>3. After returning to our store, the system will notify you of the results of authorization. Prior to receiving a successful payment confirmation, your order will be in standby mode, and upon payment, it will be transferred to the delivery mode for the specified address.</p>
+                <p><br><br><strong>Please note! 20 minutes are allocated for making an ePay payment, so please prepare your bank card in advance.
+
+                    If there is no confirmation of payment within five days, the order will be automatically canceled.</strong></p>
+                <p><br><br>The reasons why your credit card payment may not be accepted: </p>
+                    <p><br>·   your card may not be authorized for purchases on the Internet. You can specify this information by contacting the issuing bank;</p>
+                    <p><br>·   the amount charged may exceed your credit limit. For information on your current card balance, please refer to the issuing bank;</p>
+                    <p><br>·   the card details may not be entered correctly;</p>
+                    <p><br>·   your card may no longer be valid. The expiration date is usually indicated on the front side of the card (until which month and year the card is valid). You may specify the expiration date of your card by referring to the issuing bank.</p>
+                <p><br><br>If your payment gets rejected again, please contact our customer service team, who will provide more information. We are always happy to help you!</p>    
+                <p><strong><br>email  support@kyim.com</strong></p>
+                <p><strong><br>hotline  +7 777 777 77 77</strong></p>
+            </div>
+        </div>
+    </div>
+    {% endblock %} 
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

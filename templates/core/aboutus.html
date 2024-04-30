@@ -1,0 +1,46 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <title>kyim. - about us</title>
+  <link rel="stylesheet" href="{% static 'assets/css/aboutus.css' %}">
+</head>
+
+<body>
+    <div class="general">
+      <div class="pages">
+        <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+        <p>&nbsp;</p>
+        <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+        <p>&nbsp;</p>
+        <div><a href="{% url 'core:aboutus' %}" class="size"> about us</a></div>
+    </div>
+      <div class="img">
+        <img src="{% static 'assets/images/logo/about.webp' %}" alt="" class="about">
+      </div>
+      <div class="about">
+        <h1>
+          About Us
+        </h1>
+        <div>
+          <p>Kyim - is a fashion brand, a team of professionals and a huge community of girls who are in love with fashion.</p>
+          <p><br>Design studio - Kyim is located in the heart of Asia - Kazakhstan. The main idea of the brand is to offer dozens of new designs of clothing and accessories every week!</p>
+          <p><br>The Kyim girls love high fashion! She loves how we transform trends and create clothes that can be worn every day.</p>
+          <p>&nbsp;</p>
+          <p>People follow us on social networks to see the latest in the fashion industry and what to wear them with, because we always demonstrate several combination options.</p>
+          <p><br>We try to simplify the technological cycle of clothing production so that the time from the creation of a design to its availability for sale takes no more than a couple of weeks. That's why Kyim's images are always fresh.</p>
+          <p><br>Our company does not use minor labor and places orders only in large professional factories with the best working conditions.</p>
+          <p><br>Every day, thousands of girls unpack packages with new Kyim products and become happier, because it is obvious that a new dress can change the day, and with it, their whole life!</p>
+          <p><br><strong>We love fashion, we change and grow every day.</strong></p>
+          <p><br>Follow us and you will see a lot of interesting things!</p>
+          </div>
+      </div>
+    </div>
+    {% endblock %}
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

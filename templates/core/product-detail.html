@@ -1,0 +1,183 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html> 
+<html data-theme="light">
+<head> 
+  <title>kyim. - product</title>
+  <link rel="stylesheet" href="{% static 'assets/css/product-detail.css' %}">
+ 
+</head>
+
+<body >
+    <div class="producslider">
+        <div class="image-sliderrr">
+            <div class="slider">
+                <div class="kdalWDDSM">
+                    <img src="{{p.image.url}}" alt="Image" class='imgpic'/>
+                    {% for p in p_image %}
+                    <img src="{{p.images.url}}" alt="Image"class='imgpic'/>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="kdalWDDSM">
+                <div class="navigation-button">
+                    <span class="dot active" onclick="changeSlide(0)"></span>
+                    <span class="dot" onclick="changeSlide(1)"></span>
+                    <span class="dot" onclick="changeSlide(2)"></span>
+                    <span class="dot" onclick="changeSlide(3)"></span>
+                    <span class="dot" onclick="changeSlide(4)"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="description">
+            <p class="p_text">{{ p.category.title }}</p> 
+            <hr style="width: 20%;">
+            <p class="p2_text">{{ p.title }}</p>
+            <hr style="width: 40%;">
+            <p class="p_text">{{ p.vendor.title }}</p>
+            <hr style="width: 60%;">
+            <div class = "product-price">
+                <span class="p_text">$<p class="p_text product-current-price-{{ p.id }}">{{ p.price }}</p></span>
+            </div>
+            <hr style="width: 80%;">
+            <div class="вуууууз">
+                {% for var in variants %}
+            <div class="">
+                <a href="{% url 'core:product-detail' var.pid %}">{{var.color.color_display}}</a>
+            </div>
+            {% endfor %}
+            
+            </div>
+            <hr style="width: 100%;">
+            <p class="p_text">{{p.description}}</p>
+            <li class="p3_text">Tags: {% for tag in p.tags.all %}<a href="{% url 'core:tags' tag.slug %}" rel="tag" id="tagg">#{{tag.name}}</a>,{% endfor %}</li>
+            <div class="add-cart">
+                <div class="lmf">
+                    <input type = "number" value = "1" min="1" name = "" id = "product-quantity" class = "w-25 product-quantity-{{ p.id }}">
+                </div>
+                <div class="lmf">
+                    <select class="product-size product-size-{{ p.id }}">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+                </div>
+                <div class="bord">
+                   <!-- <input type = "hidden" value = "1" id = "product-quantity" class = "product-quantity-{{ p.id }}">-->
+                    <input type = "hidden" class = "product-pid-{{ p.id }}" value = "{{ p.pid }}">
+                    <input type = "hidden" class = "product-image-{{ p.id }}" value = "{{ p.image.url }}">
+                    <input type = "hidden" class = "product-id-{{ p.id }}" value = "{{ p.id }}">
+                    <input type = "hidden" class = "product-title-{{ p.id }}" value = "{{ p.title }}">
+                    
+                  <button type = "submit" class = "button button-add-to-cart add-to-cart-btn" data-index = "{{ p.id }}"> Add to cart</button>
+                  <button class = "button add-to-wishlist" data-product-item = "{{ p.id }}"> Add to wishlist</button>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+        <!---######################################### Review ####################################################-->
+    <section class="sec">
+        <div>
+            <h2>Reviews ({{ reviews.count }})</h2> 
+            <div class = "comment-list">
+                {% for r in reviews %}
+                <div class="comment">
+                    {% if r.user.profile.image %}
+                        <img src="{{ r.user.profile.image.url }}" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;" alt="My image" id="img" />&nbsp;
+                    {% else %}
+                        <img src="{% static 'assets/images/logo/default_profile_image.webp' %}" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;" alt="Default image" id="img" />&nbsp;
+                    {% endif %}
+                    <div class="column">
+                        <div class="smth">
+                            <span class= "font-heading text-brand">{{r.user.username|title}}</span>
+                        </div>
+                        <div class="smth">
+                            <span>{{r.date|date:"d M, Y"}}</span>&nbsp;
+                        </div>
+                        <div class="smth">
+                            {% for s in r.rating|ljust:r.rating %}
+                                <i class = "fas fa-star text-warning"></i>&nbsp;
+                            {% endfor %}
+                        </div>
+                        <p class="smth">{{ r.review }}</p>
+                    </div>
+                </div>
+                &nbsp;
+                &nbsp;
+                {% endfor %}
+            </div>
+            <div>
+                <h3>{{ average_rating.rating|floatformat:1 }} out of 5.0</h2>
+            </div>
+        </div>
+
+    <!---######################################### для нового комментария ####################################################-->
+
+        <div>
+            {% if request.user.is_authenticated %}
+            {% if create_review %}
+            <h2 class="mb-15 add-review-here">Add a review</h2>
+                <div class = "comment-form">
+                        <strong class = "text-success" id= "reviewFinal">  </strong>
+                            <form class = "form-contact comment-form hide-comment-form" action= "{% url 'core:add-review' p.id %}" id = "commentForm" method="POST">
+                            
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            {{review_form.review}}
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            {{review_form.rating}}
+                                        </div>
+                                    </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="button button-contactForm">Submit Review</button>
+                                    </div>
+                                </div>
+                            </form>
+                </div>
+            {% endif %}
+            {% else %}
+            <h2 class="mb-15 add-review-here">You need to be logged in to leave a review.</h2>
+            {% endif %}
+        </div>
+    </section>
+    <!-- ###################################################### Related Products ############################################################################ -->
+        <hr>
+        &nbsp;
+        &nbsp;
+        {% if products %}
+            <h2>Related Products</h2> <!-- тут он просто вытаскивает другие товары из этой категории -->
+        {% endif %}
+            <div class="row related-products">
+                {% for p in products|slice:":3" %}
+                    <img class="default" src="{{ p.image.url }}" alt="related product">
+                    <div class = "product-price">
+                        <p><a href="{% url 'core:product-detail' p.pid %}" class="ppppp">{{p.title|truncatechars:20}}</a></p>
+                        <span class = "product-current-price"><p class="p_text">$ {{ p.price }}</p></span>
+                        <!-- <p>{{p.old_price}}</p> -->
+                    </div>
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                    &nbsp;
+                {% endfor %}
+            </div>
+    </main>
+    {% endblock %}
+    <script src="{% static 'assets/js/base.js' %}"></script>
+ 
+    </body>
+    <script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

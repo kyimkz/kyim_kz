@@ -1,0 +1,97 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<html data-theme="light"> 
+    <main class = "main">
+        <!---vendor logo and details (image)-->
+        <div>
+            <div>
+                <div style = "background-image: url({{vendor.cover_image.url}})">
+                    <img src = "{{vendor.image.url}}" alt = ""/>
+                </div>
+
+                    <div>
+                        <span>Since {{vendor.date|date:"Y"}}</span>
+                    </div>
+                    <h3><a href = "#">{{vendor.title}}</a></h3>
+
+                    <div>
+                        <div>
+                            <p>{{vendor.description}}</p>
+                        </div>
+                    </div>
+
+                        <div>
+                            <ul>
+                                <li><strong>Address: </strong><span>{{vendor.address}}</span></li>
+                                <li><strong>Contact: </strong><span>{{vendor.contact}}</span></li>
+                            </ul>
+                        </div>
+
+            </div>
+                <div>
+                    <div>
+                            <div>
+                                <!--Products -->
+                                <div>
+                                    <p>Found <strong>{{products.count}}</strong> items</p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+
+
+        <div>
+            {% for p in products %}
+            <div>
+                <div>
+                    <div>
+                        <img src = "{{ p.image.url }}" alt = "" />
+                        <img src = "{{ p.image.url }}" alt = "" />
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <span>-{{p.get_percentage|floatformat:0}}%</span>
+                    </div>
+
+                    <div>
+                        <a href = "">{{p.category.title}}</a>
+                    </div>
+                    <h2><a href = "">{{p.title|truncatechars:50}}</a></h2>
+
+                    <div>
+                    </div>
+                    <p>{{ p.description }}</p>
+                    <div class = "product-price">
+                        <span>${{p.price}}</span>
+                        <span>${{p.old_price}}</span>
+                        
+                    </div>
+
+
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+        <div>
+            <h5>Category</h5>
+            <ul>
+                {% for c in categories %}
+                <li>
+                    <a><img src = "{{c.image.url}}" alt = ""/>{{c.title}}</a><span>{{c.category.all.count}}</span>
+
+                </li>
+                {% endfor %}
+            <ul>
+        </div>
+        </div>
+    </main>
+
+    
+
+{% endblock content %}
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>

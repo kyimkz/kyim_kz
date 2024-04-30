@@ -1,0 +1,41 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html data-theme="light">
+<head>
+  <title>kyim. - contact us</title>
+  <link rel="stylesheet" href="{% static 'assets/css/contact.css' %}">
+</head>
+
+<body>
+    <div class="general">
+        <div class="pages">
+            <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:contact' %}" class="size"> contact us</a></div>
+        </div>
+        <div class="img">
+            <img src="{% static 'assets/images/logo/contact.jpg' %}" alt="" class="about">
+        </div>
+        <div class="about">
+            <h1>
+                Contact Us
+            </h1>
+            <div>
+                <p>We will be glad to answer all your questions over the phone or via email  support@kyim.com.</p>
+                <p><br><br>If your have any questions regarding one of our stores, please refer to the store location map on our website to find the information you need. </p>
+                <p><br><br>If you need any help placing your order online, feel free to call our Russian-speaking customer service team for assistance at:   +7 777 777 77 77</p>
+                <p><br><br>Have questions about payment? Please find detailed information here  or simply contact us.</p>
+                <p><br><br>Get in touch with us over the phone: from 10:00 to 22:00 NST</p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

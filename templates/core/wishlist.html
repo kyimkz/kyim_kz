@@ -1,0 +1,62 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html> 
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - wishlist</title> 
+  <link rel="stylesheet" href="{% static 'assets/css/wishlist.css' %}"> 
+</head>
+
+<body>
+    
+<main class = "main" id = "wishlist-list">
+    <br>
+   <div class="gen">
+    {% for w in w %}
+    <div class="pic">
+        <div class="imageholder">
+            <td class = "image product-thumbnail"><img src="{{ w.product.image.url }}" class="imgpic"></td>
+        <div class="divis">
+            <div class = "add-cart">
+              <input type = "hidden" value = "1" id = "product-quantity" class = "product-quantity-{{ w.product.id }}">
+              <input type = "hidden" class = "product-pid-{{ w.product.id }}" value = "{{ w.product.pid }}">
+              <input type = "hidden" class = "product-image-{{ w.product.id }}" value = "{{ w.product.image.url }}">
+              <input type = "hidden" class = "product-id-{{ w.product.id }}" value = "{{ w.product.id }}">
+              <input type = "hidden" class = "product-title-{{ w.product.id }}" value = "{{ w.product.title }}">
+              <button class = "add add-to-cart-btn" data-index = "{{ w.product.id }}" id = "add-to-cart-btn"><i class="fa-solid fa-cart-shopping"></i></button>
+            </div>
+            <div class="add-wishlist">
+                <button class = "button delete-wishlist-product" data-wishlist-product = "{{ w.id }}"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+        </div>
+        <div class="cat">
+            <td>
+                <h2><a class = "product-name" href = "{% url 'core:product-detail' w.product.pid %}" >{{w.product.title|truncatechars:30}}</a></h2>
+            </td>
+            <td class = "price" data-title = "Price"> 
+                <span class="p_text">$<h2 class = "p_text product-current-price-{{w.product.id}}">{{ w.product.price }}</h2></span>
+            </td>
+        
+            <td data-title = "Stock">
+                <span class = "stock-status in-stock"><h2>{% if w.product.in_stock %}In stock{% else %} Out of stock {% endif %}</h2></span>
+            </td>
+        </div>
+    </div>
+   {%  empty %}
+    <tr>
+        <td><div class="afkfc">
+            <p>Your wishlist is empty</p>
+        </div></td>
+    </tr>
+   {% endfor %}
+   </div>
+
+   {% endblock content %} 
+</main>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html data-theme="light">
+  <title>kyim. - career</title>
+  <link rel="stylesheet" href="{% static 'assets/css/career.css' %}">
+</head>
+
+<body>
+    <div class="general">
+        <div class="pages">
+            <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:career' %}" class="size"> career</a></div>
+        </div>
+        <div class="img">
+            <img src="{% static 'assets/images/logo/career.jpg' %}" alt="" class="about">
+        </div>
+        <div class="about">
+            <h1>
+                Career
+            </h1>
+            <div>
+                <p>We grow and evolve every day!</p>
+                <p><br><br>We open new Kyim stores in different cities all around the world and constantly launch new projects.
+                    <p><br>We are always on the lookout for creative, passionate and committed professionals who are keen to embrace a lifestyle of fashion with us.</p>
+                    <p><br>Our corporate culture is based on teamwork and open communication, professional development and personal growth, mutual respect and support of new ideas and initiatives. We strongly believe in the value of every contribution. Together we can achieve impressive results.</p>
+                    <p><br>Placing our stakes on facilitating career advancement within the company, we aim at building long-lasting relationships with our employees.</p>
+                <p><br><br>What we offer:
+                    <p><br>·   Respectable salary, bonus and reward system</p>
+                    <p><br>·   Teaching and training covered by the company (programs on fashion and styling, visual merchandising, sales and customer care)</p>
+                    <p><br>·   Discounts on the collections available at our stores</p>
+                    <p><br>·   Opportunity to work in a team of professionals eager to share their experience</p>
+                    <p><br>·   Friendly and creative work environment</p>
+                    <p><br>·   Official employment and social benefits in accordance with the labour code</p>
+                <p><br><br>If you're interested in working with us, please wirte to this address: career@kyim.com about your position.</p>
+                <p><strong><br><br><br>email  support@kyim.com</strong></p>
+                <p><strong><br>hotline  +7 777 777 77 77</strong></p>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

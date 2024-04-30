@@ -1,0 +1,48 @@
+{% load static %}
+<html data-theme="light">
+  <div class="text-sss">
+    <h1 class="text-body">Total cart items: {{ totalItemsInCart }}</h1>
+  </div>
+  {% for product_id, item in cart_data.items %}
+  <div class = "element-cart-image">
+    <tr class = "pt-30">
+      <div>
+        <td class = "image product-thumbnail"><img src="{{ item.image }}" class="imgpic"></td>
+      </div>
+  
+      <div class="padd">
+        <td class = "price" data-title = "Price">
+          <h1 class = "text-body">{{item.price|floatformat:2}} tg</h1>
+        </td>
+        <td class = "price" data-title = "Price">
+          <h1 class = "mb-5"><a class = "product-name" href = "{% url 'core:product-detail' item.pid %}">{{ item.title }}</a></h1>
+        </td>
+          <div class="row">
+            <div>
+              <input type = "number" placeholder = "Quantity" name ="" value = "{{item.quantity}}" min="1" class = "product-quantity-{{ product_id }}" id="produc">
+            </div>
+            <div>
+              <select class="product-size" id="product-size-{{ product_id }}">
+                <option value="XS" {% if item.size == 'XS' %}selected{% endif %}>XS</option>
+                <option value="S" {% if item.size == 'S' %}selected{% endif %}>S</option>
+                <option value="M" {% if item.size == 'M' %}selected{% endif %}>M</option>
+                <option value="L" {% if item.size == 'L' %}selected{% endif %}>L</option>
+                <option value="XL" {% if item.size == 'XL' %}selected{% endif %}>XL</option>
+                <!-- Add more options as needed -->
+              </select>
+            </div>
+          </div>
+        
+        <div class="buttons">
+          <a class="nav_i update-item" data-title = "Refresh" data-product = "{{ product_id }}">Refresh</a>
+          <a class="nav_i delete-item" data-title = "Remove" data-product = "{{ product_id }}">Remove</a>
+        </div>
+      </div>
+    </tr>
+  </div>
+  {% endfor %}
+  <div class="sdvmlskdvm">
+    <h1 class = "text-body">Your total: ${{ cart_total}}</h1>
+  </div>
+</html>
+<script src="{% static 'assets/js/base.js' %}"></script>

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap');
+
+
+:root {
+  --primary-color: #222e37; /* Define a root variable for primary color */
+  --primary-font: "League Spartan", sans-serif;
+  --background-header-navbar: #ffffff;
+  --hover-color: rgb(211, 211, 211);
+}
+
+
+*{
+  font-family: var(--primary-font);
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: .2s linear;
+}
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --primary-color: #222e37;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --primary-color: #ffffff;
+}
+html{
+  font-size: 62.5%;
+}
+.four {
+  height: auto;
+  background-color: var(--primary-color);
+  margin-top: -4px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: -4px;
+  gap: 30px;
+}
+.akfnaksfaksf {
+  width: 100%;
+}
+.dlcknfadklca {
+  max-width: 300px;
+  height: auto;
+  width: 100%;
+}
+
+.footer_footer_divide_line__oeeAU {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-bg);
+  margin: 0 0 20px 0;
+}
+
+
+
+
+/* recommended */
+
+.akfnaksfaksf .lskjdljf {
+  margin-top: 60px;
+}
+
+
+/* recommended */
+
+/* carousel */
+
+
+/* carousel */

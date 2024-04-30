@@ -1,0 +1,35 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - order details</title> 
+  <link rel="stylesheet" href="{% static 'assets/css/order.css' %}"> 
+</head>
+
+<body>
+    <div class="general">
+        <div class="pages">
+            <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:order' %}" class="size"> order details</a></div>
+        </div>
+        <div class="about">
+            <h1>
+                Order Details
+            </h1>
+            <div>
+                <p><strong><br><br><br>email  support@kyim.com</strong></p>
+                <p><strong><br>hotline  +7 777 777 77 77</strong></p>
+            </div>
+        </div>
+    </div>
+    {% endblock %} 
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

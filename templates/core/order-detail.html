@@ -1,0 +1,46 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html> 
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - order detail</title>
+ 
+  <link rel="stylesheet" href="{% static 'assets/css/dashboard.css' %}">
+ 
+</head>
+
+<body>
+      <div class="containerpkalvjn">    
+        <section class="mainalkdcfna">
+            <div>
+                <table>
+                    <thead>
+                      <tr>
+                        <th class="country_name-cell">Order INV</th>
+                        <th class="country_name-cell">Image</th>
+                        <th class="country_name-cell">Title</th>
+                        <th class="country_name-cell">Price</th>
+                        <th class="country_name-cell">Quantity</th>
+                    </thead>
+                    <tbody>
+                        {% for o in order_items %}
+                        <tr class="firstRow">
+                            <td class="country_name-cell">INVOICE_NO-{{o.id}}</td>
+                            <td class="country_name-cell">
+                              <img src="{{o.image}}" class="imgpic">
+                            </td>
+                            <td class="country_name-cell">{{o.item}}</td>
+                            <td class="country_name-cell">${{o.price}}</td>
+                            <td class="country_name-cell">{{o.quantity}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+    {% endblock%} 
+    </body>
+    <script src="{% static 'assets/js/base.js' %}"></script>
+        
+</html>  

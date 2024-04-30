@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html> 
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - partnership</title> 
+  <link rel="stylesheet" href="{% static 'assets/css/partnership.css' %}"> 
+</head>
+
+<body>
+    <div class="general">
+        <div class="pages">
+            <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:partnership' %}" class="size"> partnership</a></div>
+        </div>
+        <div class="img">
+            <img src="{% static 'assets/images/logo/aboutus.webp' %}" alt="" class="about">
+        </div>
+        <div class="about">
+            <h1>
+                Partnership
+            </h1>
+            <div>
+                <p>Kyim has been creating, elevating and celebrating fashion since its launch in 2012. Since then, we have become not only a trusted name among customers, but also a competitive brand on the market that provides exclusive fashion in line with the latest trends in women’s clothing. The continuing dedication and commitment of our talented employees is the driving force of Kyim. Our in-store and online shopping experience has been tailored with style and convenience in mind, and our brand continuously delivers engaging experiences which customers anticipate. At the same time, the brand aims to keep developing and redefining its strategies to exceed the ever-evolving customer needs.Kyim has been creating, elevating and celebrating fashion since its launch in 2012. Since then, we have become not only a trusted name among customers, but also a competitive brand on the market that provides exclusive fashion in line with the latest trends in women’s clothing. The continuing dedication and commitment of our talented employees is the driving force of Kyim. Our in-store and online shopping experience has been tailored with style and convenience in mind, and our brand continuously delivers engaging experiences which customers anticipate. At the same time, the brand aims to keep developing and redefining its strategies to exceed the ever-evolving customer needs.</p>
+                <p><br><br>Our company is driven by its passion for innovation, and we are always in pursuit of individuals passionate about working in fashion. As you would expect from a progressive modern company, we offer various collaboration opportunities to meet your ambitions and interests. Whether you wish to become a wholesale distributor of our brand or join our franchise, our team will provide comprehensive instructions and support to ensure an easy and successful launch. Our brand also offers continued guidance and support from their management and business development teams, who are on hand to help with everything – from the store fit to providing training for staff management. </p>
+                <p><br><br>Work with us to have access to:</p>
+                    <p><br>·   More than 3 million social media followers</p>
+                    <p><br>·   Tens of thousands site visits each day</p>
+                    <p><br>·   Popular bloggers, photographers, and models involved in our content creation </p>
+                    <p><br>·   Revenue growth rate year-on-year – more than 2 times for 5 years in a row</p>
+                    <p><br>·   15% annual growth in average basket</p>
+                    <p><br>·   Kyim Members Club, the program offering our clients to use cashback bonus on their further purchases and be the first to have access to special offers and deals</p>
+                    <p><br>·   Stylists Club, the program which involves rewarding personal stylists for shopping for their clients in our stores</p>
+                <p><br><br>Have we caught your interest? Please, write to this address to get the offers: partnership@kyim.com</p>
+                <p><strong><br><br><br>email  support@kyim.com</strong></p>
+                <p><strong><br>hotline  +7 777 777 77 77</strong></p>
+            </div>
+        </div>
+    </div>
+    {% endblock %} 
+    <script src="{% static 'assets/js/base.js' %}"></script>
+</body>
+</html>  

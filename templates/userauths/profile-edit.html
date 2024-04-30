@@ -1,0 +1,75 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html data-theme="light"> 
+<head>
+  <title>kyim. - edit profile</title>
+  <link rel="stylesheet" href="{% static 'assets/css/dashboard.css' %}">
+</head>
+
+
+<main class="navbabba" style="display: flex; margin-top: 70px;">
+  <div class="navvvv">
+    <div class="navbar-dashboard">
+      <ul>
+        <li><a href="{% url 'core:dashboard' %}">
+          <div class="divvvv">
+            <span class="navvv-item">DASHBOARD</span>
+          </div>
+        </a>
+        </li>
+        <li><a href="{% url 'core:contact' %}">
+          <div class="divvvv">
+            <span class="navvv-item">CONTACT US</span>
+          </div>
+        </a>
+        </li>
+        <li><a href="{% url 'userauths:sign-in' %}">
+          <div class="divvvv">
+            <span class="navvv-item">LOGOUT</span>
+          </div>
+        </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <section class="mainkseflsdfk">
+    <!-- Edit Profile -->
+      <div class="main-bodysvsdcc">
+          <h1>Edit Profile</h1>
+          
+            {% if profile.image %}
+            <img src="{{profile.image.url}}" class="imgpic psdmsk"></span>
+            {% else %}
+            <img src="{% static 'assets/images/logo/default_profile_image.webp' %}" class="imgpic psdmsk"></span>
+            {% endif %}
+
+          <div>
+
+              <form action="" method="POST" enctype="multipart/form-data"> 
+                  <div class="sdvnsdfs">
+                    {% csrf_token %}
+                  <div class="kdcjnsdkcnwd">
+                      {{form.full_name}}
+                  </div>
+                  <div class="kdcjnsdkcnwd">
+                      {{form.phone}}
+                  </div>
+                  <div class="kdcjnsdkcnwd">
+                      {{form.image}}
+                  </div>
+                  <button class="akncak" type="submit">Save Changes</button>
+                  </div>
+              </form>
+
+          </div>
+      </div>
+  </section>
+</main>
+{% endblock content %}
+<script src="{% static 'assets/js/base.js' %}"></script>
+</body>
+</html>

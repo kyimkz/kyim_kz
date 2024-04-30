@@ -1,0 +1,81 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html data-theme="light"> 
+<head>
+  <title>kyim. - payment completed</title>
+  <link rel="stylesheet" href="{% static 'assets/css/checkout.css' %}">
+  <style>
+    th, td {
+        border: 1px solid;
+    }
+    h2 {
+        font-size: 1.8vw;
+    }
+    p {
+        font-size: 1.5vw;
+    }
+    .gmail {
+        text-transform: lowercase;
+    }
+    .gmailalign {
+        display: flex;
+        flex-direction: row;
+    }
+  </style>
+</head>
+<main style="position: relative; margin-top: 10%; margin-left: 5%; margin-right: 5%;">
+    <div>
+        <h2>Payment Completed</h2>
+        <h1>Your Order has been accepted. Order ID #{{order.oid}}</h1>
+        <h1><a href="{% url 'core:contact' %}">Contact Us</a> if you have any issue</h1>
+    </div>
+    <div class="table" style="margin-top: 2%;">
+        <table style="width: 100%;">
+            <thead style="display:flexbox;">
+                <tr>
+                    <th style="text-align: center;"><h1>Product</h1></th>
+                    <th style="text-align: center;"><h1>Quantity</h1></th>
+                    <th style="text-align: center;"><h1>Price</h1></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product_id, item in cart_data.items %}
+                <tr>
+                    <td style="width: 25%; text-align: center;" >
+                        <h1>{{item.title}}</a></h1>
+                    </td>
+                    <td style="width: 10%; text-align: center;">
+                        <h1>x {{item.quantity}}</h1>
+                    </td>
+                    <td style="width: 20%; text-align: center;">
+                        <h1>{{item.price}} $</h1>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- <h2>Invoice Information</h2> -->
+    <div class="row" style="margin-top: 2%; justify-content: space-between;">
+        <div class="gmailalign">
+            <p class="">
+                <strong>invoice to: </strong> &nbsp <p class="gmail"> {{request.user|title}}</p>
+            </p>
+        </div>
+        <div>
+            <h2 style="margin-top: 50px;">Total Amount: {{order.price}} $</h2> 
+        </div>
+    </div>
+    <hr>
+    <div style="margin-top: 2%; display: flex; justify-content: center; flex-direction: row;">
+        <p class="text-muted" style="display: flex;
+        flex-direction: row;">Hey, &nbsp <p class="gmail" style="color: #222e37;">{{request.user|title}}.</p></p> &nbsp &nbsp
+        <p>Thanks for shopping at KYIM.</p>
+    </div>
+</main>
+{% endblock %}
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>

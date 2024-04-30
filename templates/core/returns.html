@@ -1,0 +1,49 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html> 
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - returns</title> 
+  <link rel="stylesheet" href="{% static 'assets/css/returns.css' %}"> 
+</head>
+
+<body>
+    <div class="general">
+        <div class="pages">
+            <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:returns' %}" class="size"> returns</a></div>
+        </div>
+        <div class="about">
+            <h1>
+                Returns
+            </h1>
+            <div>
+                <p>We want you to be perfectly happy with every purchase and if you are not satisfied with your order for any reason (size, color, fitting), you may request an exchange or return of saleable merchandise within 7 days from receiving the order. Return of goods is possible only if the specified goods were not in use, if their original looks, consumer properties, original labels and documents confirming the purchase are all preserved.</p>
+                <p><br><br>After receiving your return package, we will check in what condition the goods are in order to determine their quality and preservation of consumer properties. If violations of the conditions for maintaining the presentation are found, our company has the right to refuse to return or exchange the goods.</p>
+                <p><br><br>In order to make a return or exchange, please fill out the return request form. If you need to replace the product, indicate the color and size for which you would like to exchange your current goods.</p>
+                <p><br><br>We will refund the full cost of the goods (or the difference in value - in the event of an exchange) by transferring funds to your bank account within 10 business days from the receipt of the returned goods. When making a replacement, we deduct the amount spent by us for shipping, so the cost of sending such a return package is at the expense of the client.</p>
+                <p><br><br>We remind you that certain groups of goods are not subject to return and exchange:</p>
+                <p><br>·   underwear, hosiery</p>
+                <p><br>·   swimwear</p>
+                <p><br>·   jewelry</p>
+                <p><br>·   perfumes and cosmetics</p>
+                <p><br>The return of the above goods is carried out only in the event of a manufacturing defect.</p>
+                <p><br><br>Our company provides for the return of goods of inadequate quality if the goods were delivered to you with factory defects, if a hidden defect was discovered during the process of wearing.</p>
+                <p><br><br>An inadequate quality product means a product that is defective, does not correspond to its intended use or has irreparable defects. Differences between design or decoration elements from those stated in the description on the website is not a malfunction of the goods.</p>
+                <p><br><br>If there is no defect, the return package to our warehouse is carried out at the expense of the client.</p>
+                <p><br><br>If you have any further questions, please feel free to contact us. We value our reputation and carefully treat and fulfil each order!</p>
+                <p><strong><br>email  support@kyim.com</strong></p>
+                <p><strong><br>hotline  +7 777 777 77 77</strong></p>
+            </div>
+        </div>
+    </div>
+    {% endblock %} 
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

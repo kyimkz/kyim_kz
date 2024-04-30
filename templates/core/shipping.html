@@ -1,0 +1,47 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html>  
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - privacy policy</title> 
+  <link rel="stylesheet" href="{% static 'assets/css/shipping.css' %}"> 
+</head>
+
+<body>
+    <div class="general">
+      <div class="pages">
+        <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+        <p>&nbsp;</p>
+        <div><a href="{% url 'core:services' %}" class="size">services /</a></div> 
+        <p>&nbsp;</p>
+        <div><a href="{% url 'core:shipping' %}" class="size"> shipping</a></div>
+    </div>
+      <div class="about">
+        <h1>
+            Shipping
+        </h1>
+        <div>
+          <p>Our company is committed to provide the best possible service to all our customers, which involves ensuring your items arrive with you safely and as quickly as possible.</p>
+          <p><br><br>How much are the shipping charges?</p>
+          <p><br>We offer complimentary shipping on all orders over 10000₸. If your order is under 10000₸, the standard shipping cost of 1000₸ will apply. </p>
+          <p><br><br>What are the shipping methods and delivery times?</p>
+          <p><br>All our orders are shipped with the express delivery service EMS-Kazpost. Estimated standard delivery time is 7 working days, excluding the time we may take to process your order (1 to 3 working days). Please note that the estimated delivery date of your order is an estimate only and is not guaranteed since delivery times may be subject to delays during peak holiday periods.</p>
+          <p><br><br>If at the time of cancellation the parcel has already been handed over to the shipping company, the shipping costs are borne by the customer.</p>
+          <p><br>Once your order has been dispatched, you will receive an email which will contain tracking information. Shortly before the delivery, you will also receive an SMS with all the necessary information and a call from the courier.</p>
+          <p><br><br>If certain items from your order are not available in the warehouse of our online store, we will ship these items from one of Kyim stores. In this case your order will be sent in multiple shipments and the packages may arrive at different times.</p>
+          <p><br>If you experience any problems with your order or have any questions or concerns, please feel free to contact us. We are always happy to help you!</p>
+             
+            
+            <p><strong><br>email  support@kyim.com</strong></p>
+            
+            <p><strong><br>hotline  +7 777 777 77 77</strong></p>
+        </div>
+      </div>
+    </div>
+    {% endblock %} 
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  

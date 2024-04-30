@@ -1,0 +1,156 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html> 
+<html data-theme="light">
+<head> 
+  <title>kyim. - dashboard</title>
+ 
+  <link rel="stylesheet" href="{% static 'assets/css/dashboard.css' %}"> 
+</head>
+
+<main class="navbabba"> 
+    <section class="basa">
+        <div class="sidebar">
+          <div class="navbar-dashboard">
+            <ul>
+              <li><a href="#" class="navvv-item" onclick="showSection('profile-section')">PROFILE</a></li>
+              <li><a href="#" class="navvv-item" onclick="showSection('orders-section')">ORDERS</a></li>
+              <li><a href="#" class="navvv-item" onclick="showSection('address-section')">ADDRESS</a></li>
+              <li><a href="#">
+                <div class="divvvv">
+                  <span class="navvv-item">SETTINGS</span>
+                </div>
+              </a>
+              </li>
+              <li><a href="{% url 'core:contact' %}">
+                <div class="divvvv">
+                  <span class="navvv-item">CONTACT US</span>
+                </div>
+              </a>
+              </li>
+              <li><a href="{% url 'userauths:sign-in' %}">
+                <div class="divvvv">
+                  <span class="navvv-item">LOGOUT</span>
+                </div>
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="fourth">
+            <div class="container" id="dash-section">
+              <h1>Welcome {{ request.user.username|title }}!</h1>
+            </div>
+            <div class="container">
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+                <h1>PERCENTAGE STUFF WILL BE HERE</h1>
+            </div>
+            <!-- Order Page -->
+            <div class="container" id="order-section">
+              <h1>My Orders</h1>
+                <table>
+                    <thead>
+                      <tr>
+                        <th class="country_name-cell">Order</th>
+                        <th class="country_name-cell">Date</th>
+                        <th class="country_name-cell">Status</th>
+                        <th class="country_name-cell">Total</th>
+                        <th class="pop96-cell">Actions</th>
+                    </thead>
+                    <tbody>
+                        {% for o in orders %}
+                        <tr class="firstRow">
+                            <td class="country_name-cell">#{{o.id}}</td>
+                            <td class="country_name-cell">{{o.order_date|date:"d.m.Y" }}</td>
+                            <td class="country_name-cell">{{o.product_status|title}}</td>
+                            <td class="country_name-cell">${{o.price}}</td>
+                            <td class="pop96-cell"><a href="{%url 'core:order-detail' o.id%}">view</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="fifth"> 
+            <div class="container" id="profile-section">
+              <h1>My Profile</h1> 
+              <div>
+                {% if profile.image %}
+                    <span><img src="{{ profile.image.url }}" alt="My Image" class="imgpic"></span>
+                {% else %}
+                    <span><img src="{% static 'assets/images/logo/default_profile_image.webp' %}" alt="Default Image" class="imgpic"></span>
+                {% endif %}
+              </div>
+              <div class="klfalkf">
+                <span>Name: {{profile.full_name}}</span>
+                <span>Phone: {{profile.phone}}</span>
+                <div class="button">
+                  <a href = "{% url 'userauths:profile-edit' %}" class="edit">Edit Profile</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="container" id="address-section">
+              <div id = "adddress">
+                <form method = "POST"> 
+                  {% csrf_token %}
+                  <h1>Add address</h1>
+                  <div>
+                    <input id="addresss" placeholder="Address" name = "address" type = "text"/>
+                    <input id="addresss" placeholder="Phone" name = "mobile"/>
+                  </div>
+                  <button id="address" type = "submit" class = "btn-fill-out submit" name = "submit" value = "Submit">Add address</button>
+                </form>
+              </div>
+              {% for a in address%}
+                <div id="div-with-address">
+                  <h1 class="h1j11">Shipping address</h1>
+                  <address>
+                    <p>{{a.address}}</p>
+                    <p>{{a.mobile}}</p>
+                    
+                  </address>
+                    {% if a.status %}
+                    <i data-address-id = "{{ a.id }}" class = "fa fa-check-circle text-success check{{ a.id }}"></i>
+                    <button data-address-id = "{{ a.id }}" class = "default-address button{{ a.id }} action_btn" style = "display:none;">Make default</button>
+                    {% else %}
+                    <i data-address-id = "{{ a.id }}" class = "fa fa-check-circle text-success check{{ a.id }}"></i>
+                    <button data-address-id = "{{ a.id }}" class = "default-address button{{ a.id }} action_btn">Make default</button>
+        
+                    {% endif %}
+                </div>
+              {% endfor %}
+            </div>
+        </div>   
+    </section>    
+</main>
+<script>
+  function showSection(sectionId) {
+      // Hide all sections
+      document.querySelectorAll('.main-body').forEach(function(section) {
+          section.style.display = 'none';
+      });
+  
+      // Show the selected section
+      document.getElementById(sectionId).style.display = 'block';
+  }
+</script>
+  {% endblock content %}
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+
+</html>

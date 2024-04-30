@@ -1,0 +1,43 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!DOCTYPE html> 
+<html data-theme="light"> 
+<head> 
+  <title>kyim. - services</title> 
+  <link rel="stylesheet" href="{% static 'assets/css/services.css' %}"> 
+</head>
+
+<body>
+    <div class="general">
+        <div class="pages">
+            <div><a href="{% url 'core:index' %}" class="size">home /</a></div> 
+            <p>&nbsp;</p>
+            <div><a href="{% url 'core:services' %}" class="size">services</a></div> 
+        </div>
+        <div class="about">
+            <h1>
+                Services
+            </h1>
+            <div>
+                <ul style="margin-top: 20px;">
+                    <li><a href="{% url 'core:aboutus' %}" class="serv">about us</a></li>
+                    <li><a href="{% url 'core:contact' %}" class="serv">contact us</a></li>
+                    <li><a href="{% url 'core:privacy' %}" class="serv">privacy policy</a></li>
+                    <li><a href="{% url 'core:shipping' %}" class="serv">shipping</a></li>
+                    <li><a href="{% url 'core:returns' %}" class="serv">returns</a></li>
+                    <li><a href="{% url 'core:order' %}" class="serv">order status</a></li>
+                    <li><a href="{% url 'core:payment' %}" class="serv">payment options</a></li>
+                    <li><a href="{% url 'core:career' %}" class="serv">career</a></li>
+                    <li><a href="{% url 'core:partnership' %}" class="serv">partnership</a></li>
+                    <li><a href="{% url 'core:details' %}" class="serv">company details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endblock %} 
+</body>
+<script src="{% static 'assets/js/base.js' %}"></script>
+</html>  
