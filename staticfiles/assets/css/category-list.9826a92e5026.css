@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #222e37; /* Define a root variable for primary color */
+  --primary-font: "League Spartan", sans-serif;
+  --background-header-navbar: #ffffff;
+  --hover-color: rgb(211, 211, 211);
+}
+
+
+
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --primary-color: #222e37;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --primary-color: #ffffff;
+}
+
+*{
+  font-family: var(--primary-font);
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+}
+.body {
+  transition: all 0.9s ease-in-out;
+  opacity: 1;
+}
+.gen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    font-family: "Bona Nova", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  transition: 0.3s opacity ease-in-out;
+  flex-direction: column;
+  margin: 12px;
+  position: relative;
+}
+.pic:hover .imgpic {
+  opacity: 0.3;
+}
+.pic:hover .cat {
+  opacity: 1;
+}
+.pic:hover .cat .p_text {
+  color: var(--primary-color);
+}
+.add-cart {
+  margin-top: -340px;
+  margin-left: -12px;
+}
+.add-wishlist {
+  margin-top: -340px;
+  margin-left: 117px;
+}
+.imageholder {
+  padding: 15px;
+}
+#add-to-cart-btn {
+  font-family: "League Spartan", sans-serif;
+  display: inline-block;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  padding: 17px 30px;
+  border: 0;
+  font-size: 17.5px;
+  color: var(--primary-color);
+  background: transparent;
+  font-weight: 800;
+  line-height: 30px;
+  transition: scale .3s ease-in-out;
+}
+#add-to-cart-btn:hover, button.button.add-to-wishlist:hover{
+  scale: 1.2;
+  color: rgb(93, 93, 93);
+}
+
+.imgpic {
+  width: 100%;
+  max-width: 250px;
+  opacity: 1;
+  display: block;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+button.button.add-to-wishlist {
+  background: transparent;
+  border: 1px transparent;
+  color: var(--primary-color);
+  font-size: 2rem;
+  cursor: pointer;
+  font-family: "League Spartan", sans-serif;
+  display: inline-block;
+  outline: 0;
+  text-align: center;
+  cursor: pointer;
+  padding: 17px 30px;
+  border: 0;
+  font-size: 17.5px;
+  color: var(--primary-color);
+  background: transparent;
+  font-weight: 800;
+  line-height: 30px;
+  transition: scale .3s ease-in-out;
+}
+.cat {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.h1 {
+  display: flex;
+  margin: 20px;
+  padding-top: 20px;
+  font-weight: 300;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+.divis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.p_text {
+  display: inline-block;
+  color: grey;
+  font-size: 22px;
+  padding: 4px;
+  font-family: "Bodoni Moda", serif;
+}
+.p2_text {
+  font-size: 2rem;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 900;
+  color: black;
+}
+.p2_text:hover {
+  color: rgb(90, 18, 18);
+}
+
+h1 {
+  font-family: "Bodoni Moda", serif;
+  margin: 20px;
+  color: var(--primary-color);
+}
+.move_words {
+  position: relative;
+  animation: move-words 6000ms linear infinite;
+  margin: 0;
+  
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  white-space: wrap;
+  padding: 0 6rem;
+  width: max-content;
+}
+@keyframes move-words {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }
+.text {
+  text-decoration: none;
+  color: #1e201f;
+}

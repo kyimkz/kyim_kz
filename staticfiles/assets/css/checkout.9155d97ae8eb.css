@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&display=swap');
+
+:root {
+  --primary-color: #222e37; /* Define a root variable for primary color */
+  --primary-font: "League Spartan", sans-serif;
+  --background-header-navbar: #ffffff;
+  --hover-color: rgb(211, 211, 211);
+}
+
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --primary-color: #222e37;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --primary-color: #ffffff;
+}
+*{
+  font-family: var(--primary-font);
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+}
+.text-sss {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-body {
+    font-family: "Bodoni Moda", serif;
+}
+.imgpic {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+}
+.element-cart-image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px;
+}
+
+main {
+  margin: 70px 20px 20px 20px;
+}
+
+h1, h2 {
+    font-size: 1.3vw;
+    font-weight: 300;
+    color: var(--primary-color);
+    margin: 10px;
+    margin-left: 0;
+}
+.imgpic {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+}
+.card-body {
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+}
+.akjcnajskc {
+  display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    flex-direction: column;
+    margin-left: 10px;
+}
+h4 {
+  font-size: 1.6vw;
+  font-weight: 600;
+  font-family: "Bodoni Moda", sans-serif;
+}
+.nav_i {
+    width: 200px;
+    height: 50px;
+    border-color: #222e37;
+    font-family: "Montserrat", serif;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+    padding: 3px;
+    cursor: pointer;
+    padding: 5px;
+    margin: 10px;
+    margin-left: 0;
+}
+.nav_i:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid #222e37;
+  cursor: pointer;
+}
+.padd {
+  padding: 5px;
+}
+.product-name {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.product-name:hover {
+  color: rgb(57, 18, 18);
+}
+.buttons {
+  margin-top: 10px;
+}
+#produc {
+  width: 50px;
+  height: 20px;
+  padding: 3px;
+  margin-top: 10px;
+}
+#navvvv {
+  margin: 20px;
+  padding: 10px;
+}
+.sdvmlskdvm {
+  margin: 20px;
+}
+
+.table {
+    margin: 20px;
+    margin-left: 0;
+}
+thead, tr {
+    margin: 5px;
+    padding: 5px;
+}
+th, h3 {
+    font-size: 1.3rem;
+    margin: 10px;
+}
+.payment {
+    width: 300px;
+}

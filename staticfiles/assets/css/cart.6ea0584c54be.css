@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Lancelot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica:ital@0;1&display=swap');
+
+:root {
+  --primary-color: #222e37; /* Define a root variable for primary color */
+  --primary-font: "League Spartan", sans-serif;
+  --background-header-navbar: #ffffff;
+  --hover-color: rgb(211, 211, 211);
+}
+[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #000000;
+  --primary-color: #222e37;
+}
+
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-fg: #ffffff;
+  --primary-color: #ffffff;
+}
+
+*{
+  font-family: var(--primary-font);
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: .2s linear;
+}
+
+html{
+  font-size: 62.5%;
+}
+.text-sss {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.text-body {
+    font-family: "Bodoni Moda", serif;
+}
+.imgpic {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+}
+.element-cart-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 20px;
+}
+
+.element-cart-image1 {
+  margin: 20px;
+}
+
+main {
+  margin: 80px;
+}
+
+.stuff{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav_i {
+    width: 200px;
+    height: 50px;
+    border-color: #222e37;
+    font-family: "Montserrat", serif;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border: 1px solid var(--primary-color);
+    padding: 3px;
+    cursor: pointer;
+}
+.nav_i:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+  border: 1px solid #222e37;
+  cursor: pointer;
+}
+.padd {
+  padding: 5px;
+}
+.product-name {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--primary-color);
+}
+.product-name:hover {
+  color: rgb(57, 18, 18);
+}
+.buttons {
+  margin-top: 10px;
+}
+
+#navvvv {
+  margin: 20px;
+  padding: 10px;
+}
+.sdvmlskdvm {
+  margin: 20px;
+}
+h4 {
+  font-size: 2.5rem;
+}
+label {
+  font-size: 1.6rem;
+}
+.form-group {
+  margin: 10px;
+}
+input {
+  width: 200px;
+  height: 30px;
+  padding: 4px;
+  font-size: 1.5rem;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: black;
+}
+select{
+  width: 60px;
+  height: 30px;
+  margin-left: 4px;
+}
+.product-size, #produc {
+  padding: 5px;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  border-width: 3px;
+  border-top: 1px white;
+  border-left: 1px white;
+  border-right: 1px white;
+  border-bottom-color: rgb(98, 98, 98);
+  width: 50px;
+}
+.product-size {
+  margin-top: 0.8px;
+}
+.row2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  margin-bottom: 20px;
+}
+
+.row1 {
+  display: flex;
+  justify-content: start;
+}
